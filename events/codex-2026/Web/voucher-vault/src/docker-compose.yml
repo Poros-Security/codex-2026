@@ -1,0 +1,5 @@
+services:
+  voucher-vault:
+    build: .
+    ports:
+      - "8900:8080"

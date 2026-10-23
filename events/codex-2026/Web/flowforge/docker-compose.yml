@@ -1,0 +1,9 @@
+services:
+  flowforge:
+    build: ./src
+    container_name: ctf-flowforge
+    environment:
+      - FLAG=CODEX26{fl0wf0rg3_un4uth_c0d3_1nj3ct10n}
+    ports:
+      - "11026:8080"
+    restart: always

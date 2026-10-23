@@ -1,0 +1,6 @@
+services:
+  vault:
+    platform: linux/amd64
+    build: .
+    ports:
+      - "5001:5000"

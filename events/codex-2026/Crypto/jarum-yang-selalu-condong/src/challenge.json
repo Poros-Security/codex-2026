@@ -1,0 +1,312 @@
+{
+  "title": "Jarum yang Selalu Condong",
+  "curve": "secp256k1",
+  "hash": "SHA-256",
+  "public_key": {
+    "x": "667a07e124b326937e6a8125bb70d89572556eb13579c1d9cad913b517295952",
+    "y": "c7fb6a1de2a9ef019f5ee1fb2ac93f13a95ba95cc6fb641080bbaa2ae418531b"
+  },
+  "nonce_bias": {
+    "model": "msb_pitch",
+    "bits": 8,
+    "note": "k = pitch*2^(256-bits) + k_low, k_low < 2^(256-bits). z = int(SHA-256(msg)). s <= n/2; do not flip s."
+  },
+  "ciphertext_scheme": "AES-128-ECB PKCS#7. Kunci = 16 byte pertama SHA-256(skalar privat sebagai 32 byte big-endian, termasuk nol di depan).",
+  "ciphertext": "5f37227c77ed1c4dbc4ae89e3a82aca007dc7d70901d35e29aa3cc807e5fb82513ad304e3e5527c7225f35b63c88b83e",
+  "signatures": [
+    {
+      "id": 0,
+      "message": "titah:00:3cdc8d644a92b7e7",
+      "pitch": "a9",
+      "r": "c232e65687df8b14de468d51f445f18fbdc38d103ea673774b1165964f72b74a",
+      "s": "22d3527202c56ef5ce91a61346294c5bc8a94171243913f6c7e98fd729a8835c"
+    },
+    {
+      "id": 1,
+      "message": "titah:01:8d342c101207e4dd",
+      "pitch": "84",
+      "r": "483d4ce11f230a63886835434cf18799379bd63a95c119cca2cfbcc4e9ecf9ef",
+      "s": "00201e91e805695d7c074955b983ae6d6f9c35a47f1b2ff235e399fb4c4db834"
+    },
+    {
+      "id": 2,
+      "message": "titah:02:f2856e045e58acf0",
+      "pitch": "b7",
+      "r": "f30a8cb75caa5e24b9f92daa9db474095870e6c115bab791e112b0c50db8ebca",
+      "s": "46719ef0d94809fdba1a36fd4888c35221dd154e75abc07012ceba12186db2ed"
+    },
+    {
+      "id": 3,
+      "message": "titah:03:6609cfaaf0d4b099",
+      "pitch": "b0",
+      "r": "923fe34abe6790bd0b08a5b1ff0dfaa92a5c15bfd4038eb914493c6ae0f3549f",
+      "s": "0624b939da5dc6dc79037bad159c8ed36565d6848635c6bc3c10f39d4f5bab02"
+    },
+    {
+      "id": 4,
+      "message": "titah:04:f223797af64a61b3",
+      "pitch": "4d",
+      "r": "849f8cb08601a926bddecef5187b3f3713311a4ec565a1de1dcf2b00d459ba99",
+      "s": "588edf17c94842957cfa62e906a3b3dd49884c3c2d963fb58564a63c68d2f84c"
+    },
+    {
+      "id": 5,
+      "message": "titah:05:65d68cba5dcfe291",
+      "pitch": "35",
+      "r": "0cabed8edcbe3cf6631b8f709138dd2cb13d37e96195afcf9799067bb8cd71f8",
+      "s": "671214683a0b7c2707db09eb3cc3f5a69fc876ecc685891eff571225e0174173"
+    },
+    {
+      "id": 6,
+      "message": "titah:06:a02e135be4bd4f3f",
+      "pitch": "58",
+      "r": "545fa9772ccef4782623a4979fab96f13d9547251c7f2debff40e57067166ed7",
+      "s": "58a880bfc52d47bdd38b38d75317370b9320fa72bd1ab97336782bdc963f4dcc"
+    },
+    {
+      "id": 7,
+      "message": "titah:07:2f44d96d564d6335",
+      "pitch": "f1",
+      "r": "1bdd37d12c89aff30403b5922a255b41a1d3538933641111452bee11ca70cd9a",
+      "s": "4d627ed4d8da6c3b8ae202a47096ef0fd3438d3d13a5491b16f86fb77d1dd84b"
+    },
+    {
+      "id": 8,
+      "message": "titah:08:5f7a6608156d8a27",
+      "pitch": "78",
+      "r": "39a94d65d08fc506aef1ddac368386c6206ab0c4ef10189b13f045a249b21baf",
+      "s": "0766cf5117eb2fae38e3dcf559c42761d518f07484433f48f301f7c99c2e8c54"
+    },
+    {
+      "id": 9,
+      "message": "titah:09:357d8a11f0441e44",
+      "pitch": "82",
+      "r": "d63796a52a50e4dd79c15391d7e468e3e4196f31795f19d5ed9bc51e766df240",
+      "s": "7f5b315bf7ff85a68af2821ac0600fa96f55b69c5c5ef7eda0ab659d90ab94e7"
+    },
+    {
+      "id": 10,
+      "message": "titah:10:4d50338d4b84fe16",
+      "pitch": "01",
+      "r": "03aa873eebfdeaa99742be2250cb56304f38f35783169a70ffe46fa2cc5b0b3f",
+      "s": "1fc565eff92c2499affdcbe82af6db069327dcb3e43b4be574aeeaaa6734dc4f"
+    },
+    {
+      "id": 11,
+      "message": "titah:11:75f96e546c6e30d2",
+      "pitch": "49",
+      "r": "e36358b06c6e3349f12c5df53a34e5c0396e4b88924921d1780d5c97bb4c55e4",
+      "s": "7d52e5f245cd02b2e36d6c80e4d6ebf991edd11a8ccb530df27f6a0ab3be5add"
+    },
+    {
+      "id": 12,
+      "message": "titah:12:22839fb1cea66918",
+      "pitch": "db",
+      "r": "c29b6fb484577e6365fb7443660503affd5d00a75498fb0d8f9207407fcd2d8f",
+      "s": "40cd8838077da9efbfced56bbd5f8952d073cef3282b77e151504da29a962a61"
+    },
+    {
+      "id": 13,
+      "message": "titah:13:b0c4f1f468f61d5d",
+      "pitch": "59",
+      "r": "665cbf016e047a8be5b33e148672d121302662c8ddd728a28d2327f9bf1568c0",
+      "s": "55d14521a368b2faa5d44a71fbb7be0db0587aea189ff7b3794075c55e0cddc6"
+    },
+    {
+      "id": 14,
+      "message": "titah:14:709163e6dc72fdad",
+      "pitch": "9d",
+      "r": "b386234a3f24d1e9c0902609fdf461a43fa9427997c540c41633792e7a954d3f",
+      "s": "6a9e29fe40044cc3d92e538929946ab147a53768245be938d1c7c13d39a8e43b"
+    },
+    {
+      "id": 15,
+      "message": "titah:15:d4e63bc34f47b959",
+      "pitch": "43",
+      "r": "67d0cd6a36dc8bb950107b32c4a30624265b168ffa1b793162eb39540520a54f",
+      "s": "480ccd12c593dd656536af75b19762a15397f38709e21f7b72c6eebe0bab1b0f"
+    },
+    {
+      "id": 16,
+      "message": "titah:16:b4ed65af7cf24d72",
+      "pitch": "ad",
+      "r": "9157aea24a11a1554ff691baae12b9afec82d279fdf683fb2c18e21df30d0e3d",
+      "s": "26b7a1291c77b7b606c61ca529dc2f897d5812ee09befda160140906347b2caf"
+    },
+    {
+      "id": 17,
+      "message": "titah:17:6fd98ff19b07173b",
+      "pitch": "34",
+      "r": "b7f1955f4c11f829973d42e9c812b344e2f2736796740d4f61839fcd9cfea19f",
+      "s": "2e61ea5d395b231e32a9223d31f4d310e569b50569c500a41459de92c23d5143"
+    },
+    {
+      "id": 18,
+      "message": "titah:18:25318c18e7872382",
+      "pitch": "03",
+      "r": "ac199ccabbefdd38f062b0d92e0fe2c8efb241d724107d00ad959bcd42c3be9e",
+      "s": "267e68276bc23664857fd677a2f9e40e1e2c9f9c44c096b098c3d5fa494087a7"
+    },
+    {
+      "id": 19,
+      "message": "titah:19:cdbc3288ae24cd91",
+      "pitch": "30",
+      "r": "812697d8495be557c602301579527162461cdada4ee1b4dd03eee76f4c15a6f6",
+      "s": "32f06ca87bd31cf71efc861e1511c9f261234ffc0eb488bc525f64eaae7fbdbc"
+    },
+    {
+      "id": 20,
+      "message": "titah:20:3166964da047eb4c",
+      "pitch": "94",
+      "r": "3883d82a8ce5cafb57b99e38b939fbe0135ae940d432377101cefb0b3d856901",
+      "s": "6c1e91642c92407984385cefdea7eb11e003614f72bd9049cd0f01cb721aeff4"
+    },
+    {
+      "id": 21,
+      "message": "titah:21:2e6130f0eaa04a73",
+      "pitch": "74",
+      "r": "349c6aec2e52988f40cab754045e9c9b90b1375100d9ce7a899bcb508dfd0b44",
+      "s": "5d0e2584e10c0c365d8381fc5880bbd5758236b93d1b0252ae190f46aede9aee"
+    },
+    {
+      "id": 22,
+      "message": "titah:22:2da787f518f8eda0",
+      "pitch": "7a",
+      "r": "4f70190c4e142fc70f4fd07cb764fac7da8cfa1ea69064f56d73f7f29e4a288a",
+      "s": "4204792a863c0df4585f201f8a56b897a91bf3b2a6f4824828807b4200eee275"
+    },
+    {
+      "id": 23,
+      "message": "titah:23:9b6484823161c49e",
+      "pitch": "cd",
+      "r": "49143694006a3aaf5887843469fcb5cd372c6b070ffdf8670039c524ec3aba21",
+      "s": "61655802556efd0c68a33a0df294e860da1c45b3e1444f17f97e72142a90a3ad"
+    },
+    {
+      "id": 24,
+      "message": "titah:24:534ba85ebaa7d5c8",
+      "pitch": "95",
+      "r": "a3a49f8f74e4394b6eb16545119b183e3a1d3ffadde7bdb56e076980c43f443b",
+      "s": "7385351fd8a431dc151543703f12e37e3268eab3952ffe469e4621d160d503c6"
+    },
+    {
+      "id": 25,
+      "message": "titah:25:99f27fdfee8b6813",
+      "pitch": "53",
+      "r": "9dde75ac0a1c23234ca6c9027388ecbf6e884c5b6345917a76b3746c3a21946a",
+      "s": "5826df2ac8bf84c3638decd281043f29f63f7b86ee2842ec2e1a0ca59d54cb15"
+    },
+    {
+      "id": 26,
+      "message": "titah:26:aff888ccf25c3b6c",
+      "pitch": "c9",
+      "r": "115eebfacb5f4aaa5ec9d0281681c26984c5a7973fcb4a887c414d233add046e",
+      "s": "536b2bab0bbfeea61b51da6daaa778005c44388f0b3b5eb64e8aec8c9bdaa8ad"
+    },
+    {
+      "id": 27,
+      "message": "titah:27:ac97dcf693e1a68e",
+      "pitch": "88",
+      "r": "9f082c97a500c4a94e91f69bc414090912d2fcaea8bc27bd7fb47279c3a4111a",
+      "s": "66e95fb57db37ef5fcf8ee42a2afe4085b6653de7b39e97baaaeef5fa6770e2f"
+    },
+    {
+      "id": 28,
+      "message": "titah:28:ab1e6107191ac19b",
+      "pitch": "12",
+      "r": "10f220ea5659fb614c3dc91e72490fcd544dade76cd8427121a84a1357238c19",
+      "s": "77b137f0274b8b0803ebba124fdda8c16393e818a5495e7e4a61bc6f35a034cd"
+    },
+    {
+      "id": 29,
+      "message": "titah:29:2c828d6a0bb58316",
+      "pitch": "c4",
+      "r": "399d038d8414db6da53bbd466dacc75a970c5c843ea9eaeed5d96caec14eda00",
+      "s": "41fa29dde6f3c991be75c7dbd0bbc3b15a442ac4348f980b0a6a3b9709576cba"
+    },
+    {
+      "id": 30,
+      "message": "titah:30:10e3bd572504671a",
+      "pitch": "65",
+      "r": "6dca66862cdf75af1ea2268a3ba6e2814d34f6c44c68cac2df6fd9c17ca1f337",
+      "s": "320e0af5546ed714d0912d833577fa28493de0065c9b74ee529f6427b48ef598"
+    },
+    {
+      "id": 31,
+      "message": "titah:31:bf270c01df4c02fb",
+      "pitch": "46",
+      "r": "8228426d3e90e08645708638a4efb129dd59da76815ac9d3f4137877a855692e",
+      "s": "39f24de1b3387a31449ba962ce6ec4da77f1dc9cc759c897fbdc0b100cab162d"
+    },
+    {
+      "id": 32,
+      "message": "titah:32:d166bb769a106663",
+      "pitch": "ab",
+      "r": "bea552007ef6ca90ded722541caa0a532451db13d1499e3714964860c3bcef26",
+      "s": "04e2e98ab1d21d77f38b4cf249a9abc4de45223916aa4900081f6b2db76bec07"
+    },
+    {
+      "id": 33,
+      "message": "titah:33:9f16e03e66afb241",
+      "pitch": "ef",
+      "r": "da2146963a0d26c372fc430ee67a93d7182089572a93c98a1ccc48d18735defb",
+      "s": "52a32b2162685fcad8a3adffcdb3cd9c98ac3d407f4e36d017817c483fe353e4"
+    },
+    {
+      "id": 34,
+      "message": "titah:34:78e22f90231a2ee9",
+      "pitch": "ff",
+      "r": "4cd3dc057e4b7ef7a60d8fce776ce4bb345678015ed778805ffe9584796f58fd",
+      "s": "2cc77f3d2188b281db954df99f440ac05be85812b621c624aeae095cd1fd0625"
+    },
+    {
+      "id": 35,
+      "message": "titah:35:06bd122f1693a619",
+      "pitch": "71",
+      "r": "5b6b508dc42758b8aad9f563f0e551a81183aff3cb0a10a9d1ff1f1db6146580",
+      "s": "0dd356d996eb1b6247f834ec8ddd34a895cf3d407108321d3f3d797900f31e3f"
+    },
+    {
+      "id": 36,
+      "message": "titah:36:6752dc17bd9af823",
+      "pitch": "f0",
+      "r": "f0a9f69cd33b398487d4a35d1b0ed1e5d516ef85ed7f39d687f533fcf789d09d",
+      "s": "2d08ae0e7c0a5e82ec0fa15a948036a3fbbc8ba9863a137a9fa538efcbb5419b"
+    },
+    {
+      "id": 37,
+      "message": "titah:37:1d16512708b2d943",
+      "pitch": "ab",
+      "r": "b3c05f88f74cb63aae3e98e367ad2352ae0d9cdb45f5f9ebd802bfe65e93f1c9",
+      "s": "4664a863e9f7960b16947f570d9ed132d5aa510bcba94e552049cbd4a3245554"
+    },
+    {
+      "id": 38,
+      "message": "titah:38:f4a92d84207f090b",
+      "pitch": "17",
+      "r": "bb1a817983383be617aeebb014aa9d390d8ce642f59b0f18c98df89f54d2dd5a",
+      "s": "1da0c826caa52f4336166c0498e52257512ef301490af8125423977870496af6"
+    },
+    {
+      "id": 39,
+      "message": "titah:39:545c46a1407a8639",
+      "pitch": "e1",
+      "r": "7bc0917f3eb288c98055ab59262e68a7aa5273ed720191f5f3308b615d7ec8eb",
+      "s": "776e174b6484a5e1db93bbb8d953ba5b64129f4d046550c286ceb82def454416"
+    },
+    {
+      "id": 40,
+      "message": "titah:40:86735dc30c6a0a5d",
+      "pitch": "08",
+      "r": "62c4bcec7a4f096f192b6271ff179a1d1d68d3abaf4f05f35e98463f2257c448",
+      "s": "01648baed6407a7d9b5c9ac99dacb1ed054eef1a2f964b026c3ccb1ecb5f9747"
+    },
+    {
+      "id": 41,
+      "message": "titah:41:a10efff86f1c0dd2",
+      "pitch": "46",
+      "r": "a1858893c0b41106580312684ec7aae23ad20ca561e12b80a2a85d6655537582",
+      "s": "16618c681ba4c15e62e29ede6702bd57d563f30fedbc6db37d9331b59d4107a1"
+    }
+  ]
+}

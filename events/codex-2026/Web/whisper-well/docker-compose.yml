@@ -1,0 +1,9 @@
+services:
+  whisper-well:
+    build: ./src
+    container_name: ctf-whisper-well
+    environment:
+      - FLAG=CODEX26{wh1sp3r_w3ll_3ch0_sh3ll_1nj3ct10n}
+    ports:
+      - "11021:8080"
+    restart: always

@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Jendral?"
+author: "yaongwon"
+
+description: |
+  Jendral menghilang padahal sudah ada kabar serangan suki liar. Biasanya aktifnya di https://www.facebook.com/profile.php?id=61593594634708
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{m3mb3r_k3s4y4ng4n_4tm1nt_l0h_y4_k4t4ny4}"

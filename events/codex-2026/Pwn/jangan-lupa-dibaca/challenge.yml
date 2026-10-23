@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Jangan lupa dibaca"
+author: "ghoti"
+
+description: |
+  <div style="text-align: center;">
+    <img src="https://i.pinimg.com/736x/ea/db/ea/eadbea911814104bf9740b7a9cc5d01c.jpg" 
+         style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+  </div>
+
+  Launch instance di platform, lalu pakai perintah `nc` yang muncul.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+provide: "./dist"
+
+container:
+  flagTemplate: "CODEX26{th3_t0d0_w4s_th3_b4ckd00r_4ll_al0ng_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 11030
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

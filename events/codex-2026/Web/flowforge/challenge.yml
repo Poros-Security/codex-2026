@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Flowforge"
+author: "bagas"
+
+description: |
+  Flowforge lets anyone drag a few blocks together and publish a working
+  AI pipeline in seconds. No login needed to build. No login needed to
+  run. The builders were proud of that — frictionless onboarding.
+
+  Every flow is just a graph. Every node in the graph can carry a
+  snippet of code. The platform executes that code when it assembles
+  your flow, before you ever press "run".
+
+  The public build endpoint asks for nothing. It takes your flow, takes
+  your code, and builds. Somewhere in the process, the code you brought
+  is not merely stored. It is run.
+
+  A small filter keeps the obvious tricks out. A small filter.
+
+  Target: http://TARGET:11026
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "CODEX26{fl0wf0rg3_un4uth_c0d3_1nj3ct10n_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 256
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 8080
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

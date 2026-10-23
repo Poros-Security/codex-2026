@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Blind Vault"
+author: "SCR"
+
+description: |
+  Sebuah vault menyimpan rahasia di balik mekanisme yang tampak sederhana.
+
+  Temukan cara untuk memanfaatkan service dan ambil flag.
+
+  Launch instance di platform, lalu pakai perintah `nc` yang muncul.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+provide: "./dist"
+
+container:
+  flagTemplate: "CODEX26{blind_vault_1s_n0t_s0_s3cur3_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 5000
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

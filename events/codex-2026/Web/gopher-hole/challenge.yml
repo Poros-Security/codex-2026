@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Gopher Hole"
+author: "bagas"
+
+description: |
+  The relay sits at the edge of the network, fetching pages for anyone
+  who asks. It can reach places the outside world cannot: the quiet
+  cache behind the firewall, the one nobody talks about.
+
+  The relay speaks more than one dialect. Not just http and https.
+  An old, forgotten protocol still works — the kind that burrows.
+
+  The cache is writable. The cache shares a directory with the front
+  door. Connect the dots, and the front door will run whatever you
+  leave for it.
+
+  Launch instance di platform, lalu buka URL yang muncul.
+  SSRF target hostname internal: `redis`.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "CODEX26{ssrf_t0_r3d1s_t0_r3m0t3_c0d3_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 256
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 8080
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

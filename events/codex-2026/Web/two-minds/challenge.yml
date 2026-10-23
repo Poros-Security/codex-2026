@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Two Minds"
+author: "bagas"
+
+description: |
+  Two machines guard the door. The edge gate and the origin server.
+  They should agree on everything. They do not.
+
+  The gate says a request ends where its Content-Length says it ends.
+  The server says a request ends where its chunks say it ends. When the
+  two disagree, the leftover bytes do not vanish. They wait. And the
+  next request to arrive walks straight into them.
+
+  Behind the gate there is a room marked /admin. The gate refuses to
+  let anyone through that door. But the gate only reads the beginning.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "CODEX26{tw0_m1nds_0n3_r3qu3st_5muggl3d_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 8000
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

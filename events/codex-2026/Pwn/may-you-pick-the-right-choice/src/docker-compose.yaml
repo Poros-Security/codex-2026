@@ -1,0 +1,73 @@
+services:
+  pwn:
+    build: { context: ., dockerfile: Dockerfile }
+    image: second_life
+    environment:
+      RESULT_HOST: unlock-api
+      RESULT_PORT: "9000"
+      RESULT_KEY: ${RESULT_KEY:?Set RESULT_KEY in .env or the shell environment}
+      INSTANCE_ID: "local"
+    expose:
+      - "1337"
+    ports:
+      - target: 1337
+        published: "1337"
+        protocol: tcp
+        mode: host
+    networks:
+      - public
+      - private
+    depends_on:
+      - unlock-api
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,nodev
+
+  result-ui:
+    build: { context: ./web, dockerfile: Dockerfile }
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      INSTANCE_ID: "local"
+    ports:
+      - target: 8080
+        published: "8080"
+        protocol: tcp
+        mode: host
+    networks:
+      - public
+      - private
+    depends_on:
+      - redis
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,nodev
+
+  unlock-api:
+    build: { context: ./unlock, dockerfile: Dockerfile }
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      RESULT_KEY: ${RESULT_KEY:?Set RESULT_KEY in .env or the shell environment}
+      INSTANCE_ID: "local"
+    networks:
+      - private
+    depends_on:
+      - redis
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,nodev
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    networks:
+      - private
+    read_only: true
+    tmpfs:
+      - /data:size=16m,nosuid,nodev
+
+networks:
+  public: {}
+  private:
+    internal: true

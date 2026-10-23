@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Where Did He Go?"
+author: "yaongwon"
+
+description: |
+  Five locations.
+  One journey.
+
+  Find the locations using the linked GuessWhereYouAre challenge.
+
+  https://guesswhereyouare.com/#/challenge/ubVCtO9MEOIXrS9YAvwy
+
+  Once you have identified all locations, find what connects them.
+  Flag format:
+  CODEX26{ALL_CAPSLOCK} 
+
+  Launch instance di platform, lalu pakai perintah `nc` yang muncul.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "CODEX26{ISHOWSPEED_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 11034
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

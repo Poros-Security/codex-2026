@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "P Balap"
+author: "Araahi"
+
+description: |
+  When ya carbonara fettucini akan datang
+
+  Launch instance di platform, lalu pakai perintah `nc` yang muncul.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+provide: "./dist"
+
+container:
+  # TODO: tidak ada file flag di initramfs; exploit root tidak menemukan apa pun.
+  flagTemplate: "CODEX26{p3rt4mA_k4l1_b1k1n_s3la1n_r3t2func_s3puh_m0h0n_kr1s4rny4_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  # run.sh listen di 31337 dan Dockerfile EXPOSE 31337; config CTFd lama
+  # menulis 1337 sehingga port yang dibuka tidak cocok dengan service.
+  exposePort: 31337
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

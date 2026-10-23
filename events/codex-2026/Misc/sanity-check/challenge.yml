@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Sanity Check"
+author: "Admin"
+
+description: |
+  Baca baik-baik guidebooknya deh mendingan.
+
+type: "StaticAttachment"
+value: 1000
+
+flags:
+  - "CODEX26{S3manGa7_Yh_bu4T_CetEePny4!!}"

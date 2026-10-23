@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Gema dari Mahkota Retak"
+author: "zanzan"
+
+description: |
+  Enam puluh empat titah dibubuhi segel mahkota. Malam itu pandai besi mendengar
+  dua bunyi sumbang: satu segel retak saat ditempa, satu lagi rusak di jalan.
+
+  Keduanya tampak palsu di mata rakyat. Namun hanya satu retakan yang masih
+  menyimpan gema separuh rahasia mahkota — dan hanya dengan gema itu peti tua
+  di ruang khazanah dapat dibuka.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{r3t4k4n_m3mb0c0rk4n_m4hk0t4}"
+
+provide: "./dist"

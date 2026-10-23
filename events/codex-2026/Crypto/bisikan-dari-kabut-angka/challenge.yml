@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Bisikan dari Kabut Angka"
+author: "zanzan"
+
+description: |
+  Di observatorium tua, papan angka selalu menjawab dengan kebohongan kecil.
+  Jawabannya tidak pernah jauh dari kebenaran, namun cukup melenceng untuk
+  menjatuhkan siapa yang percaya pada garis yang terlalu lurus.
+
+  Gangguan itu berpindah di setiap baris. Menyingkirkannya dengan kasar hanya
+  menyisakan jawaban palsu. Para penjaga bergumam: kebohongan kecil lebih mudah
+  terlihat jika persamaan diangkat ke langit yang lebih luas, lalu dicari bayangan
+  paling pendek di dalam kabut.
+
+  Di balik kabut itu, sebuah bisikan menunggu — tersembunyi pada rahasia yang
+  sama dengan yang menjaga seluruh papan.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{bkz_m3nd3ng4r_b1s1k_d4r1_k4but}"
+
+provide: "./dist"

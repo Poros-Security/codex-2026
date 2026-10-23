@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "IOT-SEM5-ASIK-MWEHEHE"
+author: "broKen"
+
+description: |
+  Si broKen ini lagi belajar cara komunikasi IOT.
+  Tapi karena beliau ini sloppers, 
+  dia gabisa baca sensor rangkaian project yang dia buat.
+  Bantu broKen buat lihat hasil pembacaan sensornya!!
+  https://drive.google.com/file/d/1VKP9OTyF5jUo3t67jCeF6hceu7tUrcYg/view?usp=sharing 
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{8ba6030470583920a48134e2f1e8966c137918b94f8e791fc5230d1a1773088b_S3PuH_IOT_WKWKWKWK}"

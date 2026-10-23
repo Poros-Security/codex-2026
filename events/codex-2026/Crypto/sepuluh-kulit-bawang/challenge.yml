@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Sepuluh Kulit Bawang"
+author: "zanzan"
+
+description: |
+  Seorang pedagang meninggalkan bawang dengan sepuluh kulit. Katanya, di pusat
+  yang paling dalam tersimpan pesan yang ia tak sempat sampaikan.
+
+  Kupaslah perlahan. Jangan terburu merobek semuanya sekaligus.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{10_l4y3r5_0f_0ni0n_p33l}"
+
+provide: "./dist"

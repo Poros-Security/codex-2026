@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "pathtophilosophy"
+author: "Rad"
+
+description: |
+  While scrolling around Wikipedia, I found this phenomenon called Getting to Philosophy.
+  Anyways can you decipher the secret message with these links?
+
+  flag format : CODEX26{secretmessage}
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{wikipeisfun}"
+
+provide: "./dist"

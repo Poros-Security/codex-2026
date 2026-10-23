@@ -1,0 +1,11 @@
+linux/
+module/
+solver/
+solve.c
+*.o
+*.ko
+*.a
+*.so
+System.map
+vmlinux
+.git/

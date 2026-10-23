@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra Industries — Edge Ingress Gateway (Incident Report #4471)</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--
+    ======================================================================
+    [NOSTRA FORENSIC AUDIT - INCIDENT REPORT #4471 - INTERNAL MEMORANDUM]
+    - Incident: Internal data vault shifts traced to gateway memory boundary overflow.
+    - Diagnostic Leak Staging: Worker memory layout temporarily exposed at /debug
+      (REMOVE IMMEDIATELY before public traffic rollout!).
+    - Diagnostic Output Storage: Subprocess verification dumps mounted at /loot/
+    - Ingestion Buffer Stream: High-throughput telemetry buffered via POST /spray
+    - Target Vault File: /flag.txt [PROTECTED - READONLY]
+    ======================================================================
+    -->
+
+    <div class="background-glow"></div>
+
+    <header class="header">
+        <div class="logo-group">
+            <div class="logo-icon">◈</div>
+            <div>
+                <div class="logo-text font-mono">NOSTRA INDUSTRIES</div>
+                <div class="logo-sub font-mono">EDGE INGRESS // GATEWAY-01</div>
+            </div>
+        </div>
+        <div class="status-group font-mono">
+            <span class="badge badge-incident">INCIDENT #4471: ELEVATED</span>
+            <div class="status-pill">
+                <span class="pulse-dot"></span> VAULT DRIFT DETECTED
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-pretitle font-mono">Core Network Infrastructure</div>
+            <h1 class="hero-title">
+                Edge Ingress &amp; <br>
+                <span class="gradient-text">Data Vault Gateway</span>
+            </h1>
+            <p class="hero-desc">
+                High-throughput reverse proxy routing and packet canonicalisation engine for Nostra Industries core cluster.
+                Active forensic telemetry initiated following anomalous heap state shifts across internal vault sectors.
+            </p>
+        </section>
+
+        <div class="grid">
+            <!-- Vault Status & Telemetry Card -->
+            <div class="card font-mono">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <span class="card-icon">⚡</span>
+                        <h3>Vault Storage &amp; Ingress Telemetry</h3>
+                    </div>
+                    <span class="tag warning">MONITORING</span>
+                </div>
+                <div class="metrics-table">
+                    <div class="metric-row">
+                        <span class="metric-label">Routing Gateway Core</span>
+                        <span class="metric-val info">NGINX Rift (Custom Ingress)</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Ingress Listener</span>
+                        <span class="metric-val ok">TCP/19321 [ACTIVE]</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Vault Cluster Alpha</span>
+                        <span class="metric-val ok">SYNCED [100% OK]</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Vault Cluster Delta</span>
+                        <span class="metric-val warning">DRIFT DETECTED [SECTOR 0x85]</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Memory Pool Allocation</span>
+                        <span class="metric-val info">Request 7920B / Conn 4096B</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Forensic Audit Reference</span>
+                        <span class="metric-val warning">Incident Report #4471</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="tag warning">Integrity: Degraded</span>
+                    <span class="tag">Telemetry: Stream Active</span>
+                    <span class="tag neutral">Audit Level: 4</span>
+                </div>
+            </div>
+
+            <!-- DevOps Advisory Memo (Subtle Hint & Lore Integration) -->
+            <div class="card font-mono">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <span class="card-icon">📋</span>
+                        <h3>DevOps Dispatch #4470-M</h3>
+                    </div>
+                    <span class="tag">INTERNAL MEMO</span>
+                </div>
+                <div class="memo-box">
+                    <div class="memo-meta">
+                        FROM: <span>devops-infra@nostra.corp</span><br>
+                        TO: <span>incident-secops@nostra.corp</span><br>
+                        SUBJECT: <span>Post-Migration Gateway Normalization</span>
+                    </div>
+                    <div class="memo-body">
+                        All legacy <code>/api/*</code> gateway traffic is now redirected to internal microservices with migration tracking parameters:
+                        <br><br>
+                        <code>rewrite ^/api/(.*)$ /internal?migrated=true;</code><br>
+                        <code>set $original_endpoint $1;</code>
+                        <div class="memo-warning">
+                            <strong>ATTENTION SECOPS:</strong> Forensic analysis detected irregular character expansion
+                            corrupting adjacent pool memory boundaries during rewrite passes. Engineering is investigating engine length mismatch.
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Pipeline: Rewrite Module</span>
+                    <span class="tag">Target: Backend Ingress</span>
+                    <span class="tag warning">Pool Guard: Tripped</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Gateway Probe Sandbox -->
+        <section class="console-section font-mono">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <span class="card-icon">💻</span>
+                        <h3>Edge Ingress Sandbox &amp; Probe Console</h3>
+                    </div>
+                    <div class="presets-container">
+                        <span class="preset-label">Presets:</span>
+                        <button type="button" class="preset-chip" onclick="setEndpoint('/api/v1/vault/status')">vault/status</button>
+                        <button type="button" class="preset-chip" onclick="setEndpoint('/api/v1/vault/sync')">vault/sync</button>
+                        <button type="button" class="preset-chip" onclick="setEndpoint('/api/v1/telemetry/nodes')">telemetry/nodes</button>
+                        <button type="button" class="preset-chip" onclick="setEndpoint('/api/v1/auth/token')">auth/token</button>
+                    </div>
+                </div>
+                <div class="console-controls">
+                    <input type="text" id="apiEndpoint" value="/api/v1/vault/status" placeholder="Enter target URI (/api/...)">
+                    <button id="sendBtn" onclick="testEndpoint()">Transmit Probe</button>
+                </div>
+                <div class="response-box">
+                    <div class="response-header">
+                        <span>Gateway Transmission Log</span>
+                        <span id="responseStatus" class="response-status-badge">READY</span>
+                    </div>
+                    <pre id="responseContent">Select an endpoint preset or input a path above and click "Transmit Probe" to inspect proxy handling...</pre>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer font-mono">
+            <p>Nostra Industries &copy; 2026 Core Infrastructure Systems. Gateway Protocol: <strong>Nostra's Rift</strong>.</p>
+        </footer>
+    </main>
+
+    <script>
+        function setEndpoint(path) {
+            document.getElementById('apiEndpoint').value = path;
+            testEndpoint();
+        }
+
+        async function testEndpoint() {
+            const uri = document.getElementById('apiEndpoint').value;
+            const resBox = document.getElementById('responseContent');
+            const statusBadge = document.getElementById('responseStatus');
+            const sendBtn = document.getElementById('sendBtn');
+            
+            sendBtn.disabled = true;
+            statusBadge.textContent = "TRANSMITTING...";
+            statusBadge.style.color = "var(--accent-orange)";
+            resBox.textContent = `[TRANSMIT] Routing probe -> ${uri} ...\n`;
+            
+            try {
+                const start = performance.now();
+                const res = await fetch(uri);
+                const elapsed = (performance.now() - start).toFixed(1);
+                const rawText = await res.text();
+                
+                statusBadge.textContent = `HTTP ${res.status}`;
+                if (res.ok) {
+                    statusBadge.style.color = "var(--accent-green)";
+                } else {
+                    statusBadge.style.color = "var(--accent-red)";
+                }
+                
+                let formattedBody = rawText;
+                try {
+                    const parsed = JSON.parse(rawText);
+                    formattedBody = JSON.stringify(parsed, null, 2);
+                } catch (_) {
+                    // Raw text response (e.g. backend ok)
+                }
+                
+                resBox.textContent = 
+`[GATEWAY RESPONSE]
+HTTP Status : ${res.status} ${res.statusText || 'OK'}
+Round Trip  : ${elapsed}ms
+Timestamp   : ${new Date().toISOString()}
+
+[PAYLOAD RECEIVED]
+${formattedBody}`;
+            } catch (err) {
+                statusBadge.textContent = "WORKER ERROR";
+                statusBadge.style.color = "var(--accent-red)";
+                resBox.textContent = 
+`[GATEWAY ROUTING FAILURE / CRASH]
+Error     : ${err.message}
+Possible causes:
+  - Connection refused / Gateway timeout
+  - NGINX worker process terminated (SIGSEGV / Heap corruption)
+  - Upstream backend unreachable`;
+            } finally {
+                sendBtn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

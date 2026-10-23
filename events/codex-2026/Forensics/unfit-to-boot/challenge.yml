@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Unfit to Boot"
+author: "ghoti"
+
+description: |
+
+  <div style="text-align: center;">
+      <img src="https://i.pinimg.com/736x/1e/a7/3f/1ea73fb02ccb9dfc8be3cc4fda6ebe59.jpg"
+           style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+  </div>
+
+  We recovered an edge device from the field that successfully booted an attacker's persistent payload. The device enforces U-Boot FIT verified boot, well at least we managed to pull a raw SPI-NAND dump.
+
+  Launch instance di platform, lalu pakai perintah `nc` yang muncul.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+provide: "./dist"
+
+container:
+  flagTemplate: "CODEX26{unf1t_h4sh3d_n0d3s_ub1_00b_m4st3r_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 11032
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

@@ -1,0 +1,30 @@
+services:
+  web:
+    build: ./src/web
+    container_name: ctf-gopher-hole-web
+    environment:
+      - FLAG=CODEX26{ssrf_t0_r3d1s_t0_r3m0t3_c0d3}
+    ports:
+      - "11023:80"
+    volumes:
+      - webroot:/var/www/html
+    restart: always
+
+  app:
+    build: ./src/app
+    container_name: ctf-gopher-hole-app
+    ports:
+      - "11024:8080"
+    restart: always
+
+  redis:
+    image: redis:7
+    container_name: ctf-gopher-hole-redis
+    user: root
+    command: ["sh", "-c", "umask 022 && exec redis-server --protected-mode no --save '' --enable-protected-configs yes"]
+    volumes:
+      - webroot:/var/www/html
+    restart: always
+
+volumes:
+  webroot:

@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "The Last Flight"
+author: "SCR"
+
+description: |
+  Sebuah arsip lama menyimpan satu-satunya bukti visual yang tersisa dari sebuah penerbangan misterius: sebuah foto kusam yang memperlihatkan sosok pesawat sedang berada di area apron. Tidak terdapat informasi mengenai nomor penerbangan, nama maskapai, maupun jenis pesawat dalam arsip resmi yang tersedia. Seiring waktu, penerbangan tersebut seolah menghilang dari catatan sejarah. Sebagai seorang analis **Open Source Intelligence (OSINT)**, tugas Anda adalah membuka kembali investigasi tersebut. Analisis setiap petunjuk visual yang terdapat pada foto untuk mengidentifikasi pesawat serta menelusuri lokasi atau area keberangkatannya. Setelah menemukan titik yang dimaksud, tiga kata yang diperoleh bukanlah tujuan akhir. Perhatikan kembali ketiga kata tersebut dan pikirkan bagaimana sebuah alamat singkat di internet dapat dibentuk darinya.
+
+  Petunjuk berikutnya tidak diberikan secara langsung. Tiga kata tersebut menyimpan jalan menuju sebuah tautan pendek. Temukan bentuk yang tepat, lalu gunakan tautan tersebut untuk melanjutkan investigasi.
+
+  Di balik tautan tersebut masih tersimpan jejak dari masa lalu. Salah satu jejak digital menyimpan pesan tersembunyi yang ditinggalkan oleh seorang informan. Pesan tersebut tidak dapat dibaca secara langsung dan memerlukan analisis lebih lanjut untuk mengungkap isinya.
+
+  Temukan pesan tersembunyi tersebut dan gunakan informasi yang diperoleh untuk menyelesaikan investigasi.
+
+  Note: Format tautan yang digunakan adalah: https://bit.ly/words1_words2_words3
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{S14PK4N_D1R1MU_U7UK_M3NJ4D1_K1NG_0S1NT!!}"
+
+provide: "./dist"

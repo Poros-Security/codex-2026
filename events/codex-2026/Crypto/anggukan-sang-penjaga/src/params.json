@@ -1,0 +1,7 @@
+{
+  "cipher": "AES-128-CBC",
+  "block_len": 16,
+  "host": "0.0.0.0",
+  "port": 18431,
+  "note": "Cipher.txt = hex(IV||C). Send uint16-be length then the blob. 0x01 = AES-CBC PKCS#7 valid, else 0x00."
+}

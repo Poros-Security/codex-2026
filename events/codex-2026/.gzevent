@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/master/internal/template/templates/others/ctf-template/.gzctf/gzevent.schema.yaml
+title: "CODEX 2026"
+start: "2026-12-05T02:00:00Z"   # TODO: set tanggal asli (UTC)
+end: "2026-12-05T10:00:00Z"     # TODO: set tanggal asli (UTC)
+poster: "../../.gzctf/favicon.ico"
+hidden: false
+summary: "CODEX 2026 CTF"
+content: |
+  Selamat datang di CODEX 2026.
+acceptWithoutReview: false
+inviteCode: ""
+organizations:
+  - "POROS Security Division"
+teamMemberCountLimit: 0
+containerCountLimit: 3
+practiceMode: true
+writeupRequired: false
+writeupDeadline: "2026-12-06T00:00:00Z"
+writeupNote: "Bikin writeup ya!"
+bloodBonus: 0

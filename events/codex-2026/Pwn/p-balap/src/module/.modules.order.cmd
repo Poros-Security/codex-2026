@@ -1,0 +1,1 @@
+savedcmd_/home/galecht/probset/draft/P-Balap/src/module/modules.order := {   echo /home/galecht/probset/draft/P-Balap/src/module/chall.o; :; } > /home/galecht/probset/draft/P-Balap/src/module/modules.order

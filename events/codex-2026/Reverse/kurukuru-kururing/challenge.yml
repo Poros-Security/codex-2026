@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Kurukuru Kururing"
+author: "ghoti"
+
+description: |
+
+  <div style="text-align: center;">
+      <img src="https://i.pinimg.com/originals/88/ba/8a/88ba8a8d1b78d0632c35c6173220bd80.gif"
+           style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+  </div>
+
+  bingung mau masukin apa flavour text nya, pokoknya direv kan aja le
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{7r45h_c4n5_4r3_m4d3_70_b3_534rch3d}"
+
+provide: "./dist"

@@ -1,0 +1,24 @@
+services:
+  nginx-rift:
+    build: .
+    container_name: ctf-nginx-rift
+
+    # Matches DepthFirstDisclosures/Nginx-Rift PoC env exactly:
+    # - SYS_PTRACE: allows setarch -R to disable ASLR inside container
+    # - seccomp=unconfined: required for personality() syscall (ASLR disable)
+    # - init: true: ensures proper signal handling and zombie reaping
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+    init: true
+
+    ports:
+      - "19321:19321"
+    restart: always
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M

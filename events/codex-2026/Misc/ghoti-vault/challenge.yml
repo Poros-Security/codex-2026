@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Ghoti Vault"
+author: "ghoti"
+
+description: |
+
+  <div style="text-align: center;">
+      <img src="https://media1.tenor.com/m/f7ra4c_g0TQAAAAd/roger-sumatra.gif"
+           style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+  </div>
+
+  some flaws haven't been fixed yet, can you escape this jail then?
+
+  Launch instance di platform, lalu pakai perintah `nc` yang muncul.
+  Close stdin (Ctrl-D) to run after enter.
+  Timeout 15s
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+provide: "./dist"
+
+container:
+  flagTemplate: "CODEX26{Jik4_k4u_b3r73mu_4ku_b39ini_B3r1umpur_7ubuh_d4n_k3rin947_m3mb454h_bumi_Di_p3nj4r4_73rkurun9_73rhukum_H4ny4_b3r73m4nk4n_53pi_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 11031
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

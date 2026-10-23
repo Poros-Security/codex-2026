@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Nginx Rift"
+author: "bagas39"
+
+description: |
+  Nostra Industries Edge Ingress Gateway reported anomalous heap state shifts
+  across internal vault sectors (Incident Report #4471).
+
+  Something about this custom ingress smells like a known *rift* in the wild.
+  Find the diagnostic leaks, then bring the vault home.
+
+  Launch instance di platform, lalu buka URL yang muncul.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "CODEX26{ng1nx_r1ft_cve_2026_42945_h3ap_0v3rfl0w_m1sm4tch_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 256
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 19321
+  enableTrafficCapture: false
+
+scripts:
+  # Dockerfile challenge ini ada di root folder, bukan di src/
+  start: docker build -t {{.slug}} .

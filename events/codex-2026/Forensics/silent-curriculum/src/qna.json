@@ -1,0 +1,62 @@
+[
+  {
+    "num": 1,
+    "question": "What source IP address performed the main intrusion?",
+    "format": "IPv4 address",
+    "answer": "203.0.113.77"
+  },
+  {
+    "num": 2,
+    "question": "What WordPress plugin was investigated immediately before the SQL injection activity?",
+    "format": "plugin slug (lowercase)",
+    "answer": "learnpress"
+  },
+  {
+    "num": 3,
+    "question": "What REST endpoint was targeted by the SQL injection?",
+    "format": "path only, no query string (e.g. /wp-json/...)",
+    "answer": "/wp-json/lp/v1/courses/archive-course"
+  },
+  {
+    "num": 4,
+    "question": "Which query-string parameter was used as the injection point?",
+    "format": "parameter name only",
+    "answer": "term_id"
+  },
+  {
+    "num": 5,
+    "question": "What SQL injection technique was primarily used to enumerate data?",
+    "format": "short phrase (e.g. time-based blind)",
+    "answer": "time-based blind"
+  },
+  {
+    "num": 6,
+    "question": "Which WordPress database table did the attacker target for credential data?",
+    "format": "table name",
+    "answer": "wp_users"
+  },
+  {
+    "num": 7,
+    "question": "Which WordPress account was used for the successful administrative login?",
+    "format": "username",
+    "answer": "courseadmin"
+  },
+  {
+    "num": 8,
+    "question": "What backdoor filename was later accessed to execute commands?",
+    "format": "filename only (e.g. shell.php)",
+    "answer": "cache-helper.php"
+  },
+  {
+    "num": 9,
+    "question": "What email address did the attacker use when creating the rogue administrator account?",
+    "format": "email address",
+    "answer": "nightshift.audit@proton.me"
+  },
+  {
+    "num": 10,
+    "question": "At what exact UTC timestamp was the rogue administrator account created?",
+    "format": "Apache/combined log timestamp, e.g. 25/Sep/2024:00:50:43 +0000",
+    "answer": "25/Sep/2024:00:50:43 +0000"
+  }
+]

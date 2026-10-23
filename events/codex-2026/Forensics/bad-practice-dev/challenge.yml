@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Bad Practice Dev"
+author: "FAZer0"
+
+description: |
+  Faz adalah seorang junior web developer yang sedang tekun berlatih membuat situs web menggunakan HTML, CSS, dan JavaScript. Saat sedang mencari inspirasi template di internet, ia tidak sengaja menekan tautan mencurigakan yang mengunduh berkas asing ke komputernya.
+  Tak lama setelah berkas tersebut dijalankan, seluruh kode proyek web yang ia buat berubah menjadi berkas asing berakhiran .secret dan tidak dapat dibuka kembali.
+  Analisis berkas disk image (.img) yang diberikan menggunakan alat forensik seperti Autopsy. Temukan bagaimana serangan tersebut terjadi, dapatkan kunci dekripsinya, dan pulihkan kembali berkas proyek milik Faz untuk menemukan flag!
+  https://drive.google.com/file/d/1H3dum01rbwTK75f-uquzPtfiyx1pw3In/view?usp=drive_link
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{C0nGr4Ts_oN_R3ver51Ng_th3_M4Lw4re}"

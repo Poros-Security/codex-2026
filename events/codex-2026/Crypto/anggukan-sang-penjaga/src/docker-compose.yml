@@ -1,0 +1,6 @@
+services:
+  warden:
+    build: .
+    ports:
+      - "18431:18431"
+    restart: unless-stopped

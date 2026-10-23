@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "VM Halu"
+author: "FAZer0"
+
+description: |
+  Janji gaada fake flag, cuma program sederhana aja kok ehe :v
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{jAd1_s3BeN4RnY4_C0d3X_1Tu_L0mB4_C3t3Ep_4t4W_4G3n7_5iH?!?!?}"
+
+provide: "./dist"

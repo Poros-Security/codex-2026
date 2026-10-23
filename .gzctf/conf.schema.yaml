@@ -1,0 +1,32 @@
+$schema: http://json-schema.org/draft-07/schema#
+type: object
+description: Schema for GZCTF server configuration file (.gzctf/conf.yaml)
+definitions:
+  url:
+    type: string
+    description: >
+      The URL where the configuration connects for game management.
+  creds:
+    type: object
+    properties:
+      username:
+        type: string
+        description: >
+          The username for authentication.
+      password:
+        type: string
+        description: >
+          The password for authentication.
+    required:
+      - username
+      - password
+    additionalProperties: false
+properties:
+  url:
+    $ref: "#/definitions/url"
+  creds:
+    $ref: "#/definitions/creds"
+required:
+  - url
+  - creds
+additionalProperties: false

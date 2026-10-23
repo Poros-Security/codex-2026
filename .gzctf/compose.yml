@@ -1,0 +1,110 @@
+name: ''
+# Project Root: /home/zenc/work/poros/codex-2026
+
+services:
+  gzctf:
+    image: gztime/gzctf:latest
+    restart: always
+    environment:
+      - "LC_ALL=en_US.UTF-8"
+    # Honeypot listener ports. Each port matches an entry in
+    # appsettings.json -> HoneypotConfig.Ports. Drop ports here that you
+    # do not want exposed (or disable per-entry in appsettings.json).
+    ports:
+      - "2222:2222"   # ssh honeypot
+      - "3306:3306"   # mysql honeypot
+      - "5432:5432"   # postgres honeypot
+      - "6379:6379"   # redis honeypot
+      - "11211:11211" # memcached honeypot
+      - "27017:27017" # mongo honeypot
+      - "9200:9200"   # elasticsearch honeypot
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    volumes:
+      - "gzctf-files:/app/files"
+      - "./appsettings.json:/app/appsettings.json:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    depends_on:
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "sh", "-c", "wget -q --spider --timeout=5 http://localhost:8080/ || exit 1" ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
+    networks:
+      traefik:
+      app_net:
+      # PlatformProxy mode (appsettings.json -> ContainerProvider.PortMappingType)
+      # requires gzctf to reach challenge container IPs. The "challenges" network
+      # is the same name as ContainerProvider.DockerConfig.ChallengeNetwork; it is
+      # declared external below because gzcli also creates/uses it for the
+      # challenge containers it spawns via /var/run/docker.sock.
+      challenges:
+    labels:
+      - "traefik.enable=true"
+      # docker network to use
+      - "traefik.docker.network=traefik"
+
+      # Service ports
+      - "traefik.http.services.gzctf-${WORKSPACE}-https.loadbalancer.server.port=8080"
+
+      # HTTPS router
+      - "traefik.http.routers.gzctf-${WORKSPACE}-https.rule=Host(`${PUBLIC_ENTRY}`)"
+      - "traefik.http.routers.gzctf-${WORKSPACE}-https.entrypoints=websecure"
+      - "traefik.http.routers.gzctf-${WORKSPACE}-https.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.gzctf-${WORKSPACE}-https.service=gzctf-${WORKSPACE}-https"
+
+  db:
+    image: postgres:17
+    restart: always
+    environment:
+      - "POSTGRES_PASSWORD=postgres"
+    volumes:
+      - "postgres-data:/var/lib/postgresql/data"
+    networks:
+      app_net:
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  cache:
+    image: redis:alpine
+    restart: always
+    networks:
+      app_net:
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  gzctf-files:
+  postgres-data:
+
+
+networks:
+  traefik:
+    external: true
+  app_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+  # The shared challenges network is created externally (by gzcli or manually
+  # via `docker network create challenges`) so gzctf can connect to challenge
+  # container IPs when PortMappingType=PlatformProxy.
+  challenges:
+    external: true

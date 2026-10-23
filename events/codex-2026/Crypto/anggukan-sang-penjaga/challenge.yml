@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Anggukan Sang Penjaga"
+author: "zanzan"
+
+description: |
+  Di bawah menara tua, Sang Penjaga tidak pernah membaca surat. Ia hanya meraba
+  susunan batu di dalam amplop — tiap batu sama besar, dan wajah setiap batu
+  terikat pada batu di belakangnya — lalu mengangguk jika semuanya terasa tepat,
+  atau menggeleng jika ada yang janggal.
+
+  Sebuah amplop curian telah jatuh ke tanganmu. Ia bersedia memeriksa amplop
+  buatanmu berkali-kali, tetapi takkan pernah membacakan isinya.
+
+  Deploy oracle di server (`src/Dockerfile`), lalu hubungkan dengan `nc <host> <port>`.
+  Port default: 18431.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{4ngguk4n_p3nj4g4_m3mbuk4_p3t1}"
+
+provide: "./dist"

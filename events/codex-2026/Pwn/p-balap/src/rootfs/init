@@ -1,0 +1,45 @@
+#!/bin/sh
+
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+
+cat <<'EOF'
+
+          _  ___    _   _____  ______ __  __ _    _ _
+    /\   | |/ / |  | | |  __ \|  ____|  \/  | |  | | |        /\
+   /  \  | ' /| |  | | | |__) | |__  | \  / | |  | | |       /  \
+  / /\ \ |  < | |  | | |  ___/|  __| | |\/| | |  | | |      / /\ \
+ / ____ \| . \| |__| | | |    | |____| |  | | |__| | |____ / ____ \
+/_/    \_\_|\_\\____/  |_|    |______|_|  |_|\____/|______/_/    \_\
+
+
+EOF
+
+echo "[*] Loading kernel module..."
+
+insmod /chall.ko
+
+if [ $? -ne 0 ]; then
+echo "[!] Failed to load chall.ko"
+else
+echo "[+] chall.ko loaded"
+fi
+
+echo
+echo "[*] Configuring network..."
+
+ip link set eth0 up
+ip addr add 10.0.2.15/24 dev eth0
+ip route add default via 10.0.2.2
+echo
+echo "[*] Starting challenge shell..."
+echo
+
+export TERM=dumb
+
+# Matikan echo pada serial TTY guest
+busybox stty -F /dev/ttyS0 -echo -ixon -ixoff 2>/dev/null || true
+
+# Berikan controlling TTY kepada shell
+exec busybox setsid busybox cttyhack busybox su ctf -s /bin/sh

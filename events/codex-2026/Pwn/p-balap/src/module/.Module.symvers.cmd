@@ -1,0 +1,1 @@
+savedcmd_/home/galecht/probset/draft/P-Balap/src/module/Module.symvers :=  scripts/mod/modpost -M        -o /home/galecht/probset/draft/P-Balap/src/module/Module.symvers -T /home/galecht/probset/draft/P-Balap/src/module/modules.order -i Module.symvers -e 

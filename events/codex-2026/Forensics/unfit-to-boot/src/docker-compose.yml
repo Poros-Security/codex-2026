@@ -1,0 +1,13 @@
+services:
+  unfit-to-boot:
+    build: .
+    restart: unless-stopped
+    environment:
+      CTF_FLAG: "${CTF_FLAG:-CODEX26{unf1t_h4sh3d_n0d3s_ub1_00b_m4st3r}}"
+      CTF_HOST: "0.0.0.0"
+      CTF_PORT: "11032"
+      CTF_RATE_LIMIT: "10"
+      CTF_RATE_WINDOW: "60"
+      CTF_TIMEOUT: "180"
+    ports:
+      - "11032:11032"

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Voucher Vault</title>
+    <style>
+      body { max-width: 680px; margin: 12vh auto; padding: 0 24px; font-family: system-ui, sans-serif; color: #182033; }
+      h1 { color: #5b49e8; } p { line-height: 1.6; color: #4c5870; }
+      .tag { display: inline-block; padding: 5px 10px; border-radius: 999px; background: #eeecff; color: #4534bb; font-size: .85rem; }
+    </style>
+  </head>
+  <body>
+    <span class="tag">Voucher Vault</span>
+    <h1>Klaim voucher loyalitas</h1>
+    <p>Kamu memiliki <strong id="credits">100</strong> kredit. Satu voucher berharga 100 kredit.</p>
+    <button id="claim">Klaim voucher</button>
+    <p id="message"></p>
+    <p><a href="/reward">Lihat reward eksklusif</a></p>
+    <script>
+      const credits = document.querySelector('#credits');
+      const message = document.querySelector('#message');
+      async function refresh() {
+        const state = await fetch('/api/status').then(r => r.json());
+        credits.textContent = state.credits;
+      }
+      document.querySelector('#claim').addEventListener('click', async () => {
+        const response = await fetch('/api/claim', { method: 'POST' });
+        const result = await response.json();
+        message.textContent = result.message;
+        refresh();
+      });
+      refresh();
+    </script>
+  </body>
+</html>

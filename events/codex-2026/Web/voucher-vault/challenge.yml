@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Voucher Vault"
+author: "SCR"
+
+description: |
+  Voucher Vault memberi setiap pengguna 100 kredit. Satu voucher juga berharga 100 kredit, tetapi reward eksklusif akan terbuka setelah mengumpulkan lima voucher.
+
+  Temukan cara untuk membuka reward tersebut dan ambil flag.
+
+  Launch instance di platform, lalu buka URL yang muncul.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "CODEX26{br0ws3r_1s_n0t_4_v4ult_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 8080
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "First Of All"
+author: "FAZer0"
+
+description: |
+  Gampang aja, kayak pas hand on di workshop kemarin kok.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{w3Lc0M3_To_R3veR5e_En61N3eR1nG!}"
+
+provide: "./dist"

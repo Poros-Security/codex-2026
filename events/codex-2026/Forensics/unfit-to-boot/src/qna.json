@@ -1,0 +1,152 @@
+[
+    {
+        "num": 1,
+        "question": "What is the raw NAND page size in bytes, including data area only (not counting OOB)?",
+        "format": "Integer (decimal, bytes)",
+        "answer": "2048"
+    },
+    {
+        "num": 2,
+        "question": "What is the OOB (out-of-band) size in bytes per page in this SPI-NAND dump?",
+        "format": "Integer (decimal, bytes)",
+        "answer": "64"
+    },
+    {
+        "num": 3,
+        "question": "What ECC scheme does this SPI-NAND part advertise on the boot console?",
+        "format": "BCH<N> ",
+        "answer": "BCH8"
+    },
+    {
+        "num": 4,
+        "question": "In the OOB-stripped logical image, how many physical erase blocks of 128 KiB fit into the 16 MiB region?",
+        "format": "Integer (decimal)",
+        "answer": "128"
+    },
+    {
+        "num": 5,
+        "question": "What is the SHA-256 of the OOB-stripped clean NAND image?",
+        "format": "sha256 (lowercase hex, no prefix)",
+        "answer": "d285f036ab4082790a102f4c813e327f483070afbf07c62185f450cdce489606"
+    },
+    {
+        "num": 6,
+        "question": "At what logical offset does the primary U-Boot environment sector (env0) begin?",
+        "format": "hex (lowercase, 0x-prefixed, 8 digits)",
+        "answer": "0x00100000"
+    },
+    {
+        "num": 7,
+        "question": "What is the stored CRC-32 value at the start of the INTACT env sector?",
+        "format": "hex (lowercase, 0x-prefixed, 8 digits)",
+        "answer": "0xf1f6c8bc"
+    },
+    {
+        "num": 8,
+        "question": "Which of the two redundant env sectors was torn?",
+        "format": "env<N> ",
+        "answer": "env1"
+    },
+    {
+        "num": 9,
+        "question": "What is the exact value of the bootcmd env variable in the intact env sector?",
+        "format": "raw string (as stored in env)",
+        "answer": "sf probe 0; sf read 0x40800000 0x200000 0x300000; bootm 0x40800000#conf@2"
+    },
+    {
+        "num": 10,
+        "question": "What is the UBI logical erase block (LEB) size in bytes for this image?",
+        "format": "Integer (decimal, bytes)",
+        "answer": "126976"
+    },
+    {
+        "num": 11,
+        "question": "How many UBI volumes are defined in the UBI image?",
+        "format": "Integer (decimal)",
+        "answer": "1"
+    },
+    {
+        "num": 12,
+        "question": "What is the name of the UBI volume that holds the Ghoti-One rootfs?",
+        "format": "raw string (volume name)",
+        "answer": "rootfs"
+    },
+    {
+        "num": 13,
+        "question": "What is the SHA-256 of the extracted FIT image file (/boot/image.fit inside the rootfs)?",
+        "format": "sha256 (lowercase hex, no prefix)",
+        "answer": "c5d0fb5f95166cd213f9da99ab3aa7328fa9631e8ba4d8df182e0df8dbddc22a"
+    },
+    {
+        "num": 14,
+        "question": "How many configuration nodes does the FIT image contain?",
+        "format": "Integer (decimal)",
+        "answer": "2"
+    },
+    {
+        "num": 15,
+        "question": "Which configuration node does the intact env's bootcmd select?",
+        "format": "conf@<N> ",
+        "answer": "conf@2"
+    },
+    {
+        "num": 16,
+        "question": "What is the name of the ramdisk subimage referenced by that configuration?",
+        "format": "ramdisk@<N> ",
+        "answer": "ramdisk@2"
+    },
+    {
+        "num": 17,
+        "question": "What is the SHA-256 of the extracted UNSIGNED ramdisk subimage?",
+        "format": "sha256 (lowercase hex, no prefix)",
+        "answer": "141d52bedf08a7622f99131b4732a59d0add787753c113e5628f225e3860f68a"
+    },
+    {
+        "num": 18,
+        "question": "What is the CVE ID for the U-Boot FIT signature verification bypass class this challenge illustrates?",
+        "format": "CVE-YYYY-NNNNN",
+        "answer": "CVE-2020-10648"
+    },
+    {
+        "num": 19,
+        "question": "What is the exact FIT property name (inside signature@1) that is supposed to enumerate every node whose bytes contribute to the signed hash?",
+        "format": "raw string (property name)",
+        "answer": "hashed-nodes"
+    },
+    {
+        "num": 20,
+        "question": "Which configuration node in the FIT image is validly covered by a signature?",
+        "format": "conf@<N> ",
+        "answer": "conf@1"
+    },
+    {
+        "num": 21,
+        "question": "At what logical offset does the OTP-mirror region begin (per the Ghoti Labs factory ATE sheet)?",
+        "format": "hex (lowercase, 0x-prefixed, 8 digits)",
+        "answer": "0x00FF0000"
+    },
+    {
+        "num": 22,
+        "question": "What is the OTP-mirror region size in bytes?",
+        "format": "Integer (decimal, bytes)",
+        "answer": "32"
+    },
+    {
+        "num": 23,
+        "question": "What is the SHA-256 of the 32 raw bytes at the OTP-mirror offset in the OOB-stripped image?",
+        "format": "sha256 (lowercase hex, 64 chars, no prefix)",
+        "answer": "dadde5bd797a61bb5e8f9656fa3f1fc1a34190ffbabdb60479509377191e24f2"
+    },
+    {
+        "num": 24,
+        "question": "What ASCII string does derive.sh use as the HKDF-SHA256 salt when deriving the audit-log key?",
+        "format": "raw string (ASCII, no quotes)",
+        "answer": "ghoti"
+    },
+    {
+        "num": 25,
+        "question": "What is the SHA-256 of the fully decrypted audit-log plaintext (including the trailing newline)?",
+        "format": "sha256 (lowercase hex, no prefix)",
+        "answer": "4793dc855bb3c6224550ce7dcf66d26dbbe47ed8cf3e87a07aee9811680f7702"
+    }
+]

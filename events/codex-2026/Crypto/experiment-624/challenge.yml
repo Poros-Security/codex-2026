@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Experiment 624"
+author: "ghoti"
+
+description: |
+  The eccentric alien scientist designed a chaotic containment field to scramble his latest project. To ensure the generator was perfectly calibrated, he recorded exactly 624 frequencies into a log before activating the final lock.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{tw1n_y0u_gotta_h34r_m3_0u7_0n_7hi5_0n3}"
+
+provide: "./dist"

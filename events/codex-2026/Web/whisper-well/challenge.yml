@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Whisper Well"
+author: "bagas"
+
+description: |
+  An ancient well stands in the town square. Whatever you whisper into
+  it, the well echoes back — perfectly, every single time.
+
+  But the well is old, and old things leak. The town elders say the well
+  once guarded a secret vault beneath the cobblestones. No one remembers
+  how to open it. No one remembers what it kept. Only the well knows. And
+  the well is still listening.
+
+  Launch instance di platform, lalu buka URL yang muncul.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "CODEX26{wh1sp3r_w3ll_3ch0_sh3ll_1nj3ct10n_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 8080
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

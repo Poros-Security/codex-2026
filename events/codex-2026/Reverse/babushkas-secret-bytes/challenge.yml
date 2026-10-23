@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Babushka's Secret Bytes"
+author: "FAZer0"
+
+description: |
+  Kupas tuntas kasus yang ada sampai kedalam dalamnya.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{Th4Nk5_5Ud4H_s0lPe_5041_In1_mFf_J1K4_T3rL4lu_64MpaNG}"
+
+provide: "./dist"

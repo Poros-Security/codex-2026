@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reward Eksklusif</title>
+    <style>
+      body { max-width: 680px; margin: 12vh auto; padding: 0 24px; font-family: system-ui, sans-serif; color: #182033; }
+      code { display: block; padding: 16px; border-radius: 8px; background: #15192a; color: #a8ffcb; font-size: 1.1rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Reward eksklusif</h1>
+    {% if unlocked %}
+      <p>Selamat, kamu berhasil mengumpulkan cukup voucher.</p>
+      <code>{{ flag }}</code>
+    {% else %}
+      <p>Reward terkunci. Kumpulkan setidaknya lima voucher untuk membukanya.</p>
+    {% endif %}
+  </body>
+</html>

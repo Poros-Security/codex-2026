@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Silent Curriculum"
+author: "ghoti"
+
+description: |
+  A campus learning platform (WordPress + LearnPress) showed signs of an
+  account takeover. SOC retained a packet capture from the edge proxy.
+
+  Reconstruct the intrusion chain from the PCAP, then answer the investigator
+  questions over the check service.
+
+  Launch instance di platform, lalu pakai perintah `nc` yang muncul.
+  Handout includes `questions.md`.
+
+type: "DynamicContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+provide: "./dist"
+
+container:
+  flagTemplate: "CODEX26{s1l3nt_c0urs3_adm1n_t4k30v3r_[TEAM_HASH]}"
+  containerImage: "{{.slug}}:latest"
+  memoryLimit: 128
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 11033
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

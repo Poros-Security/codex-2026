@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gopher Hole — Public Status</title>
+<style>
+  :root {
+    --bg: #09090b;
+    --fg: #fafafa;
+    --muted: #a1a1aa;
+    --border: #27272a;
+    --card: #18181b;
+    --accent: #818cf8;
+    --accent-2: #a78bfa;
+    --ok: #34d399;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Inter", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+    background-image:
+      radial-gradient(circle at 80% 10%, rgba(99,102,241,.14), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(139,92,246,.14), transparent 45%);
+  }
+  .wrap { max-width: 60rem; margin: 0 auto; }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+  }
+  .brand { display: flex; align-items: center; gap: .75rem; }
+  .logo {
+    width: 2rem; height: 2rem; border-radius: .55rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(129,140,248,.35);
+  }
+  .brand b { font-size: 1.1rem; font-weight: 650; letter-spacing: -.01em; }
+  .brand small { display: block; color: var(--muted); font-size: .75rem; }
+  .status {
+    display: inline-flex; align-items: center; gap: .45rem;
+    font-size: .8rem; font-weight: 600; color: var(--ok);
+    background: rgba(52,211,153,.1);
+    border: 1px solid rgba(52,211,153,.25);
+    border-radius: 9999px; padding: .35rem .8rem;
+  }
+  .status .dot {
+    width: .5rem; height: .5rem; border-radius: 9999px;
+    background: var(--ok); animation: blink 1.6s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+  h1 {
+    font-size: 1.9rem; font-weight: 700; letter-spacing: -.03em;
+    margin-bottom: .4rem;
+  }
+  h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lead { color: var(--muted); font-size: 1rem; line-height: 1.6; max-width: 46rem; }
+  .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin-top: 2rem;
+  }
+  .stat {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: .9rem; padding: 1.25rem 1.4rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,.45);
+  }
+  .stat .label {
+    font-size: .75rem; font-weight: 600; letter-spacing: .05em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .stat .value { font-size: 1.7rem; font-weight: 700; margin-top: .5rem;
+    letter-spacing: -.02em; }
+  .stat .value.ok { color: var(--ok); }
+  .stat .value.grad {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .note {
+    margin-top: 2rem; padding: 1.1rem 1.4rem;
+    background: var(--card); border: 1px solid var(--border); border-radius: .9rem;
+    color: var(--muted); font-size: .9rem; line-height: 1.6;
+    display: flex; gap: .8rem; align-items: flex-start;
+  }
+  .note .ico { font-size: 1.1rem; line-height: 1.4; }
+  footer {
+    margin-top: 2.5rem; text-align: center; color: #52525b; font-size: .8rem;
+  }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">GH</div>
+        <div>
+          <b>Gopher Hole</b>
+          <small>edge caching &amp; content delivery</small>
+        </div>
+      </div>
+      <span class="status"><span class="dot"></span>All systems operational</span>
+    </header>
+
+    <h1>The front door to the <em>quiet network</em></h1>
+    <p class="lead">
+      Gopher Hole delivers cached pages to the public while the real machinery
+      stays safely behind the firewall. If you are seeing this page, the cache
+      is warm and the relay is doing its job.
+    </p>
+
+    <div class="grid">
+      <div class="stat">
+        <div class="label">Uptime</div>
+        <div class="value ok">99.98%</div>
+      </div>
+      <div class="stat">
+        <div class="label">Pages cached</div>
+        <div class="value">1,284</div>
+      </div>
+      <div class="stat">
+        <div class="label">Cache hits (24h)</div>
+        <div class="value grad">87.4%</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <span class="ico">&#8505;</span>
+      <span>
+        This public status page is served directly from the web root.
+        No credentials, keys, or internal addresses are ever stored in
+        publicly served files.
+      </span>
+    </div>
+
+    <footer>&copy; 2026 Gopher Hole Networks — edge delivery, done right.</footer>
+  </div>
+</body>
+</html>

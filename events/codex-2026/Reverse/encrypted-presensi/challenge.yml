@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Encrypted Presensi"
+author: "Karbz"
+
+description: |
+  Seorang pegawai mencoba melakukan analisis pada aplikasi E-Presensi Android untuk menemukan rahasia yang disembunyikan. Coba Temukan dulu sebelum pegawai itu.
+
+  **Download Attachment:**
+  - [chall.zip](https://drive.google.com/drive/folders/1Kg1COgFsLLmn-FN6BVaIdj6C8juF9MNW?usp=sharing)
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{flu773r_r3v_m4st3r_c4lcul4t10n_2026}"

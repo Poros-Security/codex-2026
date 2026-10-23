@@ -1,0 +1,9 @@
+services:
+  two-minds:
+    build: ./src
+    container_name: ctf-two-minds
+    environment:
+      - FLAG=CODEX26{tw0_m1nds_0n3_r3qu3st_5muggl3d}
+    ports:
+      - "11025:8000"
+    restart: always

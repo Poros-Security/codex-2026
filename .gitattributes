@@ -1,0 +1,30 @@
+* text=auto eol=lf
+
+# Artifact challenge: jangan di-diff atau dikonversi line-ending
+*.zip    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.pdf    binary
+*.gz     binary
+*.cpio   binary
+*.so     binary
+*.so.*   binary
+*.o      binary
+*.ko     binary
+*.pcap   binary
+*.pcapng binary
+*.bin    binary
+*.img    binary
+*.raw    binary
+
+# Binary tanpa ekstensi
+events/codex-2026/Pwn/p-balap/src/bzImage              binary
+events/codex-2026/Pwn/p-balap/dist/bzImage             binary
+events/codex-2026/Pwn/p-balap/solver/solve             binary
+events/codex-2026/Pwn/p-balap/src/rootfs/**            binary
+events/codex-2026/Pwn/jangan-lupa-dibaca/src/notesvc   binary
+events/codex-2026/Pwn/may-you-pick-the-right-choice/dist/chall binary
+events/codex-2026/Pwn/may-you-pick-the-right-choice/src/chall  binary
+events/codex-2026/Reverse/first-of-all/dist/chall       binary
+events/codex-2026/Reverse/vm-halu/dist/chall            binary

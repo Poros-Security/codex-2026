@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Jarum yang Selalu Condong"
+author: "zanzan"
+
+description: |
+  Di menara utara, kompas kerajaan tidak pernah salah arah — namun selalu
+  condong dengan sudut yang boleh dilihat siapa saja. Setiap titah dibubuhi
+  segel bintang. Sebelum tinta mengering, jarum meloncat sebanyak sudut yang
+  tertulis di samping segel; langkah sisanya jauh lebih pendek daripada
+  keliling lingkaran penuh.
+
+  Dulu ada yang mencoba menebak seluruh langkah sekaligus — gagal. Ada pula
+  yang mengabaikan sudut di samping segel dan menganggap jarum diam di utara
+  sejati — juga gagal. Yang berhasil mengumpulkan banyak segel, membaca sudut
+  yang terlihat, lalu mencari panjang langkah tersembunyi yang mengikat semua
+  titah pada satu rahasia mahkota.
+
+  Di ruang khazanah, sebuah peti kecil menunggu. Hanya rahasia itu yang dapat
+  membukanya.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+flags:
+  - "CODEX26{j4rum_s3lalu_c0nd0ng_ke_ut4r4}"
+
+provide: "./dist"
