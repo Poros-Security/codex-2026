@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
 
 name: "Nginx Rift"
-author: "bagas39"
+author: "bagas"
 
 description: |
   Nostra Industries Edge Ingress Gateway reported anomalous heap state shifts
